@@ -1,0 +1,24 @@
+:root {
+    background-color: rgb(66, 66, 66);
+    color: white;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+input {
+    border-radius: 5px;
+}
+
+button {
+    width: 100px;
+}
+
+.buttons {
+    margin-top: 10px;
+    display: flex;
+    gap: 50px;
+}
