@@ -7,16 +7,31 @@ const [lastName, setLastName] = useState('');
 const [email, setEmail] = useState('');
 const [phone, setPhone] = useState('');
 const [editMode, setEditMode] = useState(false);
+const [error, setError] = useState('');
 
 function toggleEditMode(e) {
     e.preventDefault();
-    editMode ? setEditMode(false) : setEditMode(true)
+    if (checkEmail(e, email)) {
+        editMode ? setEditMode(false) : setEditMode(true)
+    }
+}
+
+function checkEmail(e, input) {
+    const regex = /\w+@\w+.com/;
+    const found = input.match(regex)
+    if (!found) {
+        setError('Email should have (@) and (.com), Example: user@email.com')
+        return false
+    }
+    setError('')
+    return true
 }
 
 return (
         <Section title={"General Information"} editMode={editMode} callback={toggleEditMode}>
             {!editMode 
             ? ( <div>
+                    <div className="error">{error}</div>
                     <input
                         value={firstName}
                         placeholder="First name"
