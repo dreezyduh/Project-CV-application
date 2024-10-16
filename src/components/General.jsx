@@ -1,4 +1,3 @@
-import  "../styles/General.css"
 import Section from "./Section"
 import { useState } from "react"
 
@@ -41,7 +40,7 @@ return (
                         onChange={(e) => setPhone(e.target.value)}
                     />
                 </div>) 
-            : ( <div>
+            : ( <div className="display">
                     <div>Name: {firstName + " " + lastName}</div>
                     <div>Email: {email}</div>
                     <div>Phone: {phone}</div>

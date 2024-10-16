@@ -20,10 +20,16 @@ function toggleEditMode(e) {
                         <input type="text" value={company} placeholder="Company" onChange={(e) => {setCompany(e.target.value)}}/>
                         <input type="text" value={position} placeholder="Position Title" onChange={(e) => {setPosition(e.target.value)}}/>
                         <input type="text" value={responsibility} placeholder="Job Responsibilities" onChange={(e) => {setResp(e.target.value)}}/>
-                        <input type="date" value={from} placeholder="From" onChange={(e) => {setFrom(e.target.value)}}/>
-                        <input type="date" value={to} placeholder="To" onChange={(e) => {setTo(e.target.value)}}/>
+                        <div className="dateContainer">
+                            <label htmlFor="dateF">From</label>
+                            <input type="date" id="dateF" value={from} placeholder="From" onChange={(e) => {setFrom(e.target.value)}}/>
+                        </div>
+                        <div className="dateContainer">
+                            <label htmlFor="dateT">To</label>
+                            <input type="date" id="dateT" value={to} placeholder="To" onChange={(e) => {setTo(e.target.value)}}/>
+                        </div>
                     </div>)
-                : ( <div>
+                : ( <div className="display">
                         <div>Company: {company}</div>
                         <div>Position Title: {position}</div>
                         <div>Job Responsibilities: {responsibility}</div>

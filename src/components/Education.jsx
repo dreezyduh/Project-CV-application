@@ -18,10 +18,12 @@ function toggleEditMode(e) {
             ? ( <div>
                     <input type="text" value={school} placeholder="School Name" onChange={(e) => setSchool(e.target.value)}/>
                     <input type="text" value={studies} placeholder="Studies" onChange={(e) => setStudies(e.target.value)}/>
-                    <label htmlFor="date">Date</label>
-                    <input type="date" value={date} placeholder="Date" onChange={(e) => setDate(e.target.value)}/>
+                    <div className="dateContainer">
+                        <label htmlFor="dateS">Finished on</label>
+                        <input type="date" id="dateS" value={date} placeholder="Date" onChange={(e) => setDate(e.target.value)}/>
+                    </div>
                 </div>)
-            : ( <div>
+            : ( <div className="display">
                     <div>School: {school}</div>
                     <div>Studies: {studies}</div>
                     <div>Date: {date}</div>
